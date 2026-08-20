@@ -21,9 +21,10 @@ Baseline audit: 20 August 2026, overall score 60/100.
 2. Publish `robots.txt` with the sitemap location.
 3. Publish `sitemap.xml` for the current canonical URL.
 4. Add Open Graph and Twitter Card metadata for Telegram and social sharing.
-5. Add `WebPage`, `WebSite`, `Organization`, and `Person` JSON-LD without changing the visible page.
+5. Add `WebPage`, `WebSite`, `Organization`, `Person`, `Service`, and product-list JSON-LD without changing the visible page.
 6. Add explicit `width`, `height`, `decoding`, and appropriate lazy loading to images.
 7. Add crawlable HTML links to product domains; keep the current dialogs and visual interaction.
+8. Publish a factual root `llms.txt` that mirrors existing page sections and product links.
 
 ## Phase 1 — evidence and information architecture
 
@@ -49,6 +50,7 @@ Baseline audit: 20 August 2026, overall score 60/100.
 - Open Graph metadata points to an absolute, working image URL.
 - JSON-LD parses without errors and uses only verifiable organization/person facts.
 - Product URLs are present as real HTML links, not only injected by JavaScript.
+- `/llms.txt` returns the current factual AI-crawler summary without introducing unsupported claims.
 - Existing screenshots remain visually equivalent at desktop and mobile viewports.
 - CLS does not regress and improves from the current ~0.13 measurement.
 - Docker health check passes locally and after deployment.

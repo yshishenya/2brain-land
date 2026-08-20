@@ -10,15 +10,20 @@
     <link rel="canonical" href="https://2brain.pro/" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ru_RU" />
+    <meta property="og:site_name" content="2BRAIN" />
     <meta property="og:title" content="2BRAIN — ИИ-трансформация и продуктовая разработка" />
     <meta property="og:description" content="2BRAIN помогает компаниям находить перспективные ИИ-сценарии, запускать продукты и масштабировать работающие решения." />
     <meta property="og:url" content="https://2brain.pro/" />
     <meta property="og:image" content="https://2brain.pro/assets/images/yan-shishenya-editorial-v4-square.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="560" />
+    <meta property="og:image:height" content="560" />
     <meta property="og:image:alt" content="Ян Шишеня, основатель и лидер 2BRAIN" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="2BRAIN — ИИ-трансформация и продуктовая разработка" />
     <meta name="twitter:description" content="2BRAIN помогает компаниям находить перспективные ИИ-сценарии, запускать продукты и масштабировать работающие решения." />
     <meta name="twitter:image" content="https://2brain.pro/assets/images/yan-shishenya-editorial-v4-square.png" />
+    <meta name="twitter:image:alt" content="Ян Шишеня, основатель и лидер 2BRAIN" />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="styles.css?v=86" />
     <script type="application/ld+json">
@@ -40,6 +45,7 @@
             "name": "Ян Шишеня",
             "jobTitle": "Основатель и лидер 2BRAIN",
             "url": "https://2brain.pro/#about",
+            "image": "https://2brain.pro/assets/images/yan-shishenya-editorial-v4-square.png",
             "sameAs": ["https://t.me/Yan_Shi"]
           },
           {
@@ -58,6 +64,33 @@
             "isPartOf": {"@id": "https://2brain.pro/#website"},
             "about": {"@id": "https://2brain.pro/#organization"},
             "inLanguage": "ru-RU"
+          },
+          {
+            "@type": "Service",
+            "@id": "https://2brain.pro/#service-transformation",
+            "name": "Комплексная ИИ-трансформация",
+            "description": "Пройдём с вашей компанией путь от первых гипотез до масштабируемых ИИ-решений и культуры инноваций.",
+            "provider": {"@id": "https://2brain.pro/#organization"},
+            "serviceType": "ИИ-трансформация"
+          },
+          {
+            "@type": "Service",
+            "@id": "https://2brain.pro/#service-point-solutions",
+            "name": "ИИ для конкретных задач",
+            "description": "Исследуем процесс, создаём продукт, проектируем инфраструктуру или развиваем рабочие практики команды.",
+            "provider": {"@id": "https://2brain.pro/#organization"},
+            "serviceType": "Разработка и внедрение ИИ-решений"
+          },
+          {
+            "@type": "ItemList",
+            "@id": "https://2brain.pro/#products",
+            "name": "Собственные продукты 2BRAIN",
+            "itemListElement": [
+              {"@type": "ListItem", "position": 1, "item": {"@type": "WebApplication", "name": "AIRIS", "url": "https://airis.you/"}},
+              {"@type": "ListItem", "position": 2, "item": {"@type": "WebApplication", "name": "ГРАФ", "url": "https://rec.2brain.pro/"}},
+              {"@type": "ListItem", "position": 3, "item": {"@type": "WebApplication", "name": "Астра", "url": "https://astra.2brain.pro/"}},
+              {"@type": "ListItem", "position": 4, "item": {"@type": "WebApplication", "name": "Tutor", "url": "https://tutor.2brain.pro/"}}
+            ]
           }
         ]
       }
