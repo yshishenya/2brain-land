@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate static site contract
+        run: python3 scripts/validate_site.py
+
+      - name: Validate Compose configuration
+        run: docker compose config --quiet
+
+      - name: Run local container smoke test
+        shell: bash
+        run: |
+          set -euo pipefail
+          cleanup() { docker compose down --remove-orphans; }
+          trap cleanup EXIT
+          docker compose up -d
+          for attempt in {1..20}; do
+            if curl --fail --silent http://127.0.0.1:8460/healthz; then
+              exit 0
+            fi
+            sleep 2
+          done
+          docker compose logs
+          exit 1
