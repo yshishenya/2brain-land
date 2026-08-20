@@ -1,0 +1,20 @@
+# Local operational state and generated artifacts
+/backups/
+/output/
+
+# Secrets and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*credentials*.json
+*service-account*.json
+
+# Local tooling
+.DS_Store
+*.swp
+__pycache__/
+*.py[cod]
