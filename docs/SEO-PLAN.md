@@ -9,6 +9,7 @@ Baseline audit: 20 August 2026, overall score 60/100.
 ## Guardrails
 
 - Do not change the visual layout, copy hierarchy, typography, colors, spacing, or animation behavior without a separate approval.
+- Do not change visible page text, browser title, or metadata copy without a separate approval.
 - Do not add new public pages until their purpose, URL, canonical, metadata, and navigation relationship are defined.
 - Do not claim live search, traffic, backlink, or field-performance data until Google Search Console, GA4, Yandex Webmaster, or another source is connected.
 - Preserve the current deployment rollback path.
@@ -23,11 +24,10 @@ Baseline audit: 20 August 2026, overall score 60/100.
 5. Add `WebPage`, `WebSite`, `Organization`, and `Person` JSON-LD without changing the visible page.
 6. Add explicit `width`, `height`, `decoding`, and appropriate lazy loading to images.
 7. Add crawlable HTML links to product domains; keep the current dialogs and visual interaction.
-8. Add a no-JavaScript-safe CTA link to Telegram while preserving the current CTA behavior.
 
 ## Phase 1 — evidence and information architecture
 
-1. Improve title and meta description using Russian search-demand evidence.
+1. Improve title and meta description using Russian search-demand evidence only after separate copy approval.
 2. Strengthen founder, team, case, award, and result evidence without inventing claims.
 3. Decide whether the site remains a single landing page or gains crawlable service/case pages.
 4. If new pages are approved, create service and case URLs with independent metadata and schema.
