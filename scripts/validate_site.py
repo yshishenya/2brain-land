@@ -18,6 +18,7 @@ class SiteParser(HTMLParser):
         self.lang: str | None = None
         self.title = ""
         self.description = ""
+        self.canonical: str | None = None
         self.h1_count = 0
         self._in_title = False
         self._title_parts: list[str] = []
@@ -33,6 +34,8 @@ class SiteParser(HTMLParser):
             self.h1_count += 1
         elif tag == "meta" and attributes.get("name", "").lower() == "description":
             self.description = attributes.get("content", "") or ""
+        elif tag == "link" and "canonical" in (attributes.get("rel", "") or "").lower():
+            self.canonical = attributes.get("href")
 
         for attribute in ("href", "src"):
             value = attributes.get(attribute)
@@ -67,11 +70,24 @@ def main() -> int:
             errors.append("title is missing")
         if not parser.description:
             errors.append("meta description is missing")
+        if parser.canonical != "https://2brain.pro/":
+            errors.append(f"canonical must be https://2brain.pro/, got {parser.canonical!r}")
         if parser.h1_count != 1:
             errors.append(f"expected exactly one H1, got {parser.h1_count}")
         for asset in parser.local_assets:
             if asset and not (site / asset).is_file():
                 errors.append(f"local asset is missing: {asset}")
+
+        html = index.read_text(encoding="utf-8")
+        if 'type="application/ld+json"' not in html or '"@type": "Organization"' not in html:
+            errors.append("Organization JSON-LD is missing")
+
+    robots = site / "robots.txt"
+    sitemap = site / "sitemap.xml"
+    if not robots.is_file() or "Sitemap: https://2brain.pro/sitemap.xml" not in robots.read_text(encoding="utf-8"):
+        errors.append("robots.txt is missing or does not reference the canonical sitemap")
+    if not sitemap.is_file() or "https://2brain.pro/" not in sitemap.read_text(encoding="utf-8"):
+        errors.append("sitemap.xml is missing or does not contain the canonical homepage")
 
     result = {"ok": not errors, "errors": errors}
     print(json.dumps(result, ensure_ascii=False, indent=2))
