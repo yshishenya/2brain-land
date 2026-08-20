@@ -1,6 +1,7 @@
 # Local operational state and generated artifacts
 /backups/
 /output/
+/releases/
 
 # Secrets and credentials
 .env
