@@ -25,6 +25,7 @@ Baseline audit: 20 August 2026, overall score 60/100.
 6. Add explicit `width`, `height`, `decoding`, and appropriate lazy loading to images.
 7. Add crawlable HTML links to product domains; keep the current dialogs and visual interaction.
 8. Publish a factual root `llms.txt` that mirrors existing page sections and product links.
+9. Add a rendering-compatible baseline Content Security Policy at the static server layer.
 
 ## Phase 1 — evidence and information architecture
 
@@ -51,6 +52,7 @@ Baseline audit: 20 August 2026, overall score 60/100.
 - JSON-LD parses without errors and uses only verifiable organization/person facts.
 - Product URLs are present as real HTML links, not only injected by JavaScript.
 - `/llms.txt` returns the current factual AI-crawler summary without introducing unsupported claims.
+- Production responses include the baseline security headers without blocking the site's local assets or scripts.
 - Existing screenshots remain visually equivalent at desktop and mobile viewports.
 - CLS does not regress and improves from the current ~0.13 measurement.
 - Docker health check passes locally and after deployment.
