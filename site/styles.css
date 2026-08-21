@@ -350,7 +350,7 @@ h1,h2,h3,p{margin-top:0}
 .visual-airis{background:#151515}
 .visual-airis img{object-fit:cover;object-position:left center}
 .visual-astra{background:#000}
-.visual-astra img{object-fit:cover;object-position:left center}
+.visual-astra img{object-fit:contain;object-position:left center;transform:scale(1.07);transform-origin:left center}
 .visual-tutor{background:#0c2618}
 .visual-tutor img{object-fit:cover;object-position:left center}
 
