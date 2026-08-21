@@ -119,7 +119,7 @@ def main() -> int:
                 if missing_types:
                     errors.append(f"JSON-LD types are missing: {', '.join(sorted(missing_types))}")
                 product_urls = {item.get("item", {}).get("url") for item in next((item for item in graph if item.get("@type") == "ItemList"), {}).get("itemListElement", [])}
-                expected_product_urls = {"https://airis.you/", "https://rec.2brain.pro/", "https://astra.2brain.pro/", "https://tutor.2brain.pro/"}
+                expected_product_urls = {"https://airis.you/", "https://rec.2brain.pro/", "https://ykai.tilda.ws/astra", "https://tutor.2brain.pro/"}
                 if product_urls != expected_product_urls:
                     errors.append("JSON-LD product URLs do not match the crawlable product links")
             except (ValueError, TypeError, KeyError, IndexError) as exc:

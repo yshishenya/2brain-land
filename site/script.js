@@ -132,7 +132,7 @@
         "Снижение текучести и рост вовлечённости"
       ],
       linkLabel: "Посмотреть Астру",
-      url: "https://astra.2brain.pro/"
+      url: "https://ykai.tilda.ws/astra"
     },
     tutor: {
       title: "Tutor",
