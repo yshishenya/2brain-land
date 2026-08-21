@@ -15,6 +15,7 @@
 *service-account*.json
 
 # Local tooling
+.seo-cache/
 .DS_Store
 *.swp
 __pycache__/

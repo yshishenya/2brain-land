@@ -130,11 +130,12 @@ def main() -> int:
             "og:locale": "ru_RU",
             "og:site_name": "2BRAIN",
             "og:url": "https://2brain.pro/",
+            "og:image": "https://2brain.pro/assets/images/og-cover.png",
             "og:image:type": "image/png",
-            "og:image:width": "560",
-            "og:image:height": "560",
+            "og:image:width": "1200",
+            "og:image:height": "630",
             "twitter:card": "summary_large_image",
-            "twitter:image": "https://2brain.pro/assets/images/yan-shishenya-editorial-v4-square.png",
+            "twitter:image": "https://2brain.pro/assets/images/og-cover.png",
         }
         for key, expected in required_meta.items():
             actual = parser.open_graph.get(key) if key.startswith("og:") else parser.meta.get(key)
